@@ -1,0 +1,209 @@
+:root{
+    /* Background */
+    --background-primary: #f4f5fb;
+    --background-secondary: #ffffff;
+
+    /* Color */
+    --color-brand: #ca3884;
+    --color-brand-hover: #a52c6b;
+    --color-danger: #c93847;
+
+    /* Content */
+    --content-primary: #080b12;
+    --content-secondary: #374151;
+    --content-tertiary: #9ca3af;
+    --always-white: #ffffff;
+
+    /* Border */
+    --border-primary: #d1d5db;
+    --border-hover: #b9c2d0;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "inter";
+    margin-top: 25px;
+    background:var(--background-primary);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 65px;
+  
+}
+
+.content {
+    display: block;
+    min-width: 630px;
+    justify-self: center;
+    margin-top: 62px;
+}
+
+span {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-brand);
+    display: block;
+}
+
+.title {
+    margin-top: 16px;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+form {
+
+    margin-top: 55px;
+    display: flex;
+    height: 44px;
+    gap: 16px;
+
+    input[type="text"] {
+        padding: 11px 18px;
+        border: 2px solid var(--border-primary);
+        border-radius: 12px;
+        width: 70%;
+        
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    input[type="text"]:hover {
+        border: 2px solid var(--border-hover);
+        transition: border 1s transform ease-in-out;
+    }
+
+    input[type="text"]:focus-visible {
+        border: 2px solid var(--color-brand);
+        transition: border 1s transform ease-in-out;
+        outline: none;
+    }
+
+    button {
+        width: 160px;
+        padding: 12px 24px;
+        border-radius: 12px;
+        background-color: var(--color-brand);
+
+        font-size: 1rem;
+        line-height: 20px;
+        font-weight: 600;
+        color: var(--always-white);
+        border: none;
+
+    }
+    
+    button:disabled {
+        opacity: 0.5;
+    }
+
+    button:hover {
+        background-color: var(--color-brand-hover);
+        transition: 1s transform ease-in-out;
+    }
+}
+
+section {
+    margin-top: 40px;
+    display: flex;
+    padding: 16.5px 12px;
+
+    width: 100%;
+    border-radius: 12px;
+    background-color: var(--background-secondary);
+    align-items: center;
+    
+    label {
+        width: 95%;
+        align-items: center;
+        display: flex;
+        gap: 12px;
+    }
+
+    input[type="checkbox"] {
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+
+        border: solid 1px var(--border-primary);
+    }
+
+    input[type="checkbox"]:hover {
+        border: solid 1px var(--border-hover);
+        transition: 1s transform ease-in-out;
+    }
+
+    input[type="checkbox"]:checked {
+        background-color: var(--color-brand);
+        border: solid 1px var(--color-brand);
+
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+    }
+
+    svg {
+        align-items: center;
+       justify-content: end;
+       cursor: pointer;
+    }
+}
+
+section + section {
+    margin-top: 12px;
+}
+
+.danger {
+    
+    display: flex;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: var(--color-danger);
+    gap: 8px;
+    margin-bottom: 150px;
+    opacity: 0;
+
+    span {
+        width: 90%;
+        color: var(--always-white);
+    }
+}
+
+.danger-active {
+    opacity: 1;
+    transform: translateY(-10px);
+    transition-property: opacity transform;
+    transition-duration: .5s;
+}
+
+@media screen and (orientation: portrait) {
+
+    .content {
+        min-width: 80%
+    }
+
+    form {
+        display: block;
+        height: 104px;
+
+        input[type="text"] {
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 16px;
+        }
+    }
+}
